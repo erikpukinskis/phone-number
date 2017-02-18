@@ -5,7 +5,7 @@
   "main": "phone-number.js",
   "dependencies": {
     "module-library": "*",
-    "plivo": "*",
+    "plivo": "*"
   },
   "repository": {
     "type": "git",
