@@ -1,7 +1,7 @@
 var library = require("module-library")(require)
 
 module.exports = library.export(
-  "phone-number",
+  "phone-person",
   ["plivo"],
   function(plivo) {
 
@@ -12,11 +12,11 @@ module.exports = library.export(
       })
     }
 
-    function PhoneNumber(number) {
+    function PhonePerson(number) {
       this.number = number
     }
 
-    PhoneNumber.prototype.send = function(text) {
+    PhonePerson.prototype.send = function(text) {
       var message = {
         "src": "15108336870",
         "dst": this.number,
@@ -37,8 +37,8 @@ module.exports = library.export(
       console.log("sent!", this.number)
     }
 
-    return function phoneNumber(number) {
-      return new PhoneNumber(number)
+    return function phonePerson(number) {
+      return new PhonePerson(number)
     }
   }
 )

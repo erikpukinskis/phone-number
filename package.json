@@ -1,6 +1,6 @@
 {
-  "name": "phone-number",
-  "version": "0.1.0",
+  "name": "phone-person",
+  "version": "0.0.0",
   "description": "Text a person",
   "main": "phone-number.js",
   "dependencies": {
@@ -9,6 +9,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/erikpukinskis/phone-number.git"
+    "url": "https://github.com/erikpukinskis/phone-person.git"
   }
 }
