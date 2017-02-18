@@ -2,8 +2,8 @@
 Set the PLIVO_AUTH_ID and PLIVO_AUTH_TOKEN environment variables, then:
 
 ```javascript
-var phoneNumber = require("phone-number")
+var phonePerson = require("phone-person")
 
-var jenny = phoneNumber("15108675309")
+var jenny = phonePerson("15108675309")
 jenny.send("I got it!")
 ```
