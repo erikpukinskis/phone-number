@@ -2,7 +2,7 @@
   "name": "phone-person",
   "version": "0.3.0",
   "description": "Text a person",
-  "main": "phone-number.js",
+  "main": "phone-person.js",
   "dependencies": {
     "module-library": "*",
     "plivo": "*"
