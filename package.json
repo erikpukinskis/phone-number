@@ -1,0 +1,14 @@
+{
+  "name": "phone-number",
+  "version": "0.0.0",
+  "description": "Text a person",
+  "main": "phone-number.js",
+  "dependencies": {
+    "module-library": "*",
+    "plivo": "*",
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/erikpukinskis/phone-number.git"
+  }
+}
