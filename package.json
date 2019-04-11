@@ -1,6 +1,6 @@
 {
   "name": "phone-person",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "description": "Text a person",
   "main": "phone-person.js",
   "dependencies": {
