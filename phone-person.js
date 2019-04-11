@@ -2,37 +2,31 @@ var library = require("module-library")(require)
 
 module.exports = library.export(
   "phone-person",
-  ["plivo"],
-  function(plivo) {
-
-    if (process.env.PLIVO_AUTH_ID) {
-      var messages = plivo.RestAPI({
-        authId: process.env.PLIVO_AUTH_ID,
-        authToken: process.env.PLIVO_AUTH_TOKEN,
-      })
-    }
+  ["make-request"],
+  function(makeRequest) {
 
     function PhonePerson(number) {
       this.number = number
     }
 
     PhonePerson.prototype.send = function(text) {
-      var message = {
-        "src": "15108336870",
-        "dst": this.number,
-        text: text
-      }
-
       function handleResponse(status, response) {
         console.log("Message sent?", status)
       }
 
-      if (!messages) {
-        console.log("Tried to send text message, but no Plivo credentials found. Try starting app with PLIVO_AUTH_ID=x PLIVO_AUTH_TOKEN=y node your-app")
+      if (!process.env.SWIFT_ACCOUNT_KEY) {
+        console.log("\nFAILED TO TEXT: "+text+" -> to "+this.number+"\n\nNo Swift SWIFT_ACCOUNT_KEY environment variable was set. Go to smsgateway.ca to get an account key.")
         return
       }
 
-      messages.send_message(message, handleResponse)
+      var url = "https://secure.smsgateway.ca/services/message.svc/"+process.env.SWIFT_ACCOUNT_KEY+"/"+this.number
+
+      makeRequest({
+        "method": "POST",
+        "url": url,
+        "data": {
+          "MessageBody": text}},
+        handleResponse)
 
       console.log("sent!", this.number)
     }

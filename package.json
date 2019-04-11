@@ -5,7 +5,7 @@
   "main": "phone-person.js",
   "dependencies": {
     "module-library": "*",
-    "plivo": "*"
+    "make-request": "*"
   },
   "repository": {
     "type": "git",
